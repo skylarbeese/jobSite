@@ -1,0 +1,195 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul a, li{
+    list-style: none;
+    text-decoration: none;
+ 
+}
+nav{
+    height: 5rem;
+}
+
+ul{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+li{
+    font-size: 1.3rem;
+    margin: 1rem;
+    color: #ABC;
+}
+li:hover{
+    color: white;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+.con{
+    width: 100vw;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+.cont a {
+    text-decoration: none;
+    color: rgb(70, 67, 67);
+}
+.cont a:hover {
+    color: black;
+}
+.cont{
+    width: 70%;
+    height: 10%;
+    border-top: 1px solid #ABC;
+    border-left: 1px solid #ABC;
+    border-right: 1px solid #ABC;
+}
+.new-job{
+    width: 90%;
+    padding: 1rem;
+    border-bottom: 1px solid #ABC;
+    margin: 1rem;
+}
+.new-job h1{
+    font-size: 2.4rem;
+    color: rgb(104, 106, 109);
+}
+ .dis .des{
+    font-size: 16px;
+    width: 100%;
+}  
+ .cont .date{
+     font-size: 1rem;
+ }  
+ .card-body{
+     width: 100%;
+     height: 100%;
+     
+ }
+ .card-footer{
+    
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+ }
+ .card-footer h2{
+    
+    color: #ABC;
+    font-size: 1rem;
+}
+.em-email{
+  
+    margin-left: 1rem;
+}
+.em-email h2{
+ font-size: 1rem;
+}
+/*----------------------------------------------------------------------------------------------------*/
+
+.job-con{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.job-single{
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin-bottom: 3rem;
+}
+.job-single p.descript {
+    border-bottom: 1px solid #ABC;
+    padding-bottom: 2rem;
+}
+p.descript{
+ margin-top: 2rem;
+}
+.title{
+    font-size: 2rem;
+    border-bottom: 1px solid #ABC;
+    padding-bottom: 2rem;
+}
+.name{
+    margin: 2rem;
+    font-size: 20px;
+}
+.sal-date{
+    border-top: 1px solid #ABC;
+    padding-top: 2rem;
+    width: 100%;
+    justify-content: space-around;
+    
+    display: flex;
+}
+ .sal{
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    padding-right: 20%;
+}
+.mon{
+    margin-right: 2rem;
+}
+.sal-date .sal p {
+   
+    font-size: 1rem;
+}
+
+
+
+.sal-date .date{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+.form-input{
+ width: 50%;
+ margin: 2rem;
+}
+.form{
+    width:100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.form h1{
+    margin: 1rem;
+    border-bottom: 1px solid black;
+}
+form input{
+    margin: .5rem;
+}
+form textarea{
+    margin: .5rem;
+}
+input.form-control{
+    border-bottom: 1px solid black;
+}
+textarea.form-control{
+    border-bottom: 1px solid black;
+}
+.submit:hover{
+    background-color: rgb(116, 13, 13);
+    color: white;
+}
+/*------------------------------------------------------------------------------------------*/
+.buttons{
+    width:100%;
+    justify-content: right;
+    align-items: right;
+    display: flex;
+}
