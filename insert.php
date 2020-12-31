@@ -85,7 +85,7 @@ class In {
      <div class="buttons">
      <from action="del.php" method="POST">
      <a href="del.php?del=<?php echo $row['cat_id']; ?>"><button class='btn btn-danger dele' name="submit" type="submit"> Delete </button></a>
-     <a href="edit.php?Ed=<?php echo $row['cat_id']; ?>"><button class='btn btn-danger dele' name="submit" type="submit"> Edit </button></a>
+     <a href="edit.php?Ed=<?php echo $row['cat_id']; ?>"><button class='btn btn-success dele' name="submit" type="submit"> Edit </button></a>
      </from>
      </div>
      </div>
@@ -103,22 +103,8 @@ class In {
        $stmt->execute();
     }
 
-    public function edit() {
-      $id = $_GET['Ed'];
-    
-     
-       $sql = "SELECT * FROM job_listed WHERE cat_id = ? ";
-       $stmt = $this->db->prepare($sql);
-     
-     $stmt->bindparam(1, $id);
-    
-      $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC); 
-
-    echo $row['cat_id']; 
-    }
 }
-    ?>
+    
 
 
 

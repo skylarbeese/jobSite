@@ -24,7 +24,17 @@ li{
 li:hover{
     color: white;
 }
-
+.btn-con{
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    padding-right: 2rem;
+    
+    
+}
+.btn-con button{
+    margin-right: 2rem;
+}
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 .con{
@@ -97,6 +107,49 @@ li:hover{
     align-items: center;
     display: flex;
 }
+@media only screen and (max-width: 600px) {
+    .sal-date{
+        border-top: 1px solid #ABC;
+        padding-top: 1rem;
+        width: 100%;
+        justify-content: center;
+        
+        display: flex;
+    }
+     .sal{
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      
+    }
+    .date p {
+
+        font-size: 10px;
+    }
+    .date{
+        padding: 0;
+    }
+    .mon{
+       
+        font-size: 10px;
+    }
+    .sal-date .sal p {
+       
+        font-size: 10px;
+    }
+    
+    
+    
+    .sal-date .date{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+
 .job-single{
   width: 60%;
   justify-content: center;
@@ -186,10 +239,30 @@ textarea.form-control{
     background-color: rgb(116, 13, 13);
     color: white;
 }
+.input label{
+    font-size: 1.2rem;
+    
+}
+.input{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 /*------------------------------------------------------------------------------------------*/
 .buttons{
     width:100%;
     justify-content: right;
     align-items: right;
     display: flex;
+}
+.con{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.se{
+    width: 60%;
+    background-color: gray;
 }

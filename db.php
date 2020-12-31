@@ -28,6 +28,7 @@ while($row = $stmt->fetch()){
 */
 
 require_once 'insert.php';
-
+require_once 'update.php';
 $crud = new In($pdo);
+$crud1 = new Up($pdo);
 

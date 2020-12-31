@@ -9,7 +9,9 @@ $datas = $crud->get(); ?>
 </div>
 <?php foreach ($datas as $data) : ?>
 <div class="con">
-
+<div class="se">
+         
+      </div>
   <div class="cont">
   <div class="card-header">
 <a href="listing.php?id=<?php echo $data['cat_id']?>"><h3><?php echo $data['j_title']; ?></h3></a>

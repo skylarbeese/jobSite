@@ -2,5 +2,8 @@
 include_once 'db.php';
 
 
-    $data = $crud->edit();
 
+  $data = $crud1->edit();
+   
+
+   
