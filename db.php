@@ -13,19 +13,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
    throw new PDOException($e->getMessage());
 }
-/*
-$stmt = $pdo->query('SELECT * FROM job_listed');
 
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-echo $row['j_title'];
-}
-
-while($row = $stmt->fetch()){
-    echo $row->j_title;
-    echo $row->cat_id;
-    }
-
-*/
 
 require_once 'insert.php';
 require_once 'update.php';

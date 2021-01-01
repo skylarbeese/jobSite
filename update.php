@@ -86,6 +86,12 @@ public function edit() {
    
     }
 }
+
+ public function search() {
+      
+  }
+
+
 }
 
 

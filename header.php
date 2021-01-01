@@ -26,11 +26,12 @@
     <button class="btn btn-outline-success my-2 my-sm-0"> signup </button>
     </form>
     <form method="POST" action="">
-    <button class="btn btn-outline-success my-2 my-sm-0"> signin </button>
+    <button class="btn btn-outline-success my-2 my-sm-0" > signin </button>
     </form>
     </div>
 </nav>
 </div> 
+
 
 
 

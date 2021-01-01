@@ -59,8 +59,13 @@ li:hover{
     border-left: 1px solid #ABC;
     border-right: 1px solid #ABC;
 }
+.new-job-con{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 .new-job{
-    width: 90%;
+    width: 80%;
     padding: 1rem;
     border-bottom: 1px solid #ABC;
     margin: 1rem;
@@ -229,10 +234,10 @@ form input{
 form textarea{
     margin: .5rem;
 }
-input.form-control{
+.form-input input.form-control{
     border-bottom: 1px solid black;
 }
-textarea.form-control{
+.form-input textarea.form-control{
     border-bottom: 1px solid black;
 }
 .submit:hover{
@@ -261,8 +266,5 @@ textarea.form-control{
     align-items: center;
     display: flex;
     flex-direction: column;
-}
-.se{
-    width: 60%;
-    background-color: gray;
+    margin-bottom: 2rem;
 }
