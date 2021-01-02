@@ -1,12 +1,12 @@
-
+<?php   include_once 'db.php'; ?>
 
 <div class="con-div">
 <div class="search-job">
   <h1> Search here </h1>
   <h2> search for a job title or compony here </h2>
-  <form action="POST" method="">
-    <input class="form-control search-bar" type="text">
-    <input class="btn btn-danger submit" type="submit" name="submit" value="submit">
+  <form action="ser.php" method="POST">
+    <input class="form-control search-bar" type="text" name='keyword'>
+    <button class="btn btn-danger submit" type="submit" name="submit" value="submit"> search </button>
   </form>
 </div>
 </div>
@@ -58,11 +58,12 @@
   display: flex;
 }
 
-.search-bar{
+input.search-bar{
   width: 70%;
     height: 20%;
     font-size: 1.2rem;
-    padding: 1rem;
+    padding: 1.2rem;
     border-bottom: 2px solid black;
 }
+
 </style>

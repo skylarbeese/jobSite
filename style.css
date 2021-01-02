@@ -268,3 +268,21 @@ form textarea{
     flex-direction: column;
     margin-bottom: 2rem;
 }
+
+/*--------------------------------------------------------------------------------------------------*/
+
+.signup-form-con{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+   
+   
+}
+.signin{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
