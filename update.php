@@ -1,3 +1,5 @@
+
+
 <?php include_once 'db.php'; 
 
 class Up {
@@ -90,17 +92,23 @@ public function edit() {
     public function search($key) {
        if(isset($_POST['submit'])) {
            // $keyword = $_POST['keyword'];
-      $sql = "SELECT * FROM job_listed WHERE j_title LIKE '$key'";
+      $sql = "SELECT * FROM job_listed WHERE j_title LIKE '$key' OR company_nm LIKE '$key'";
       $stmt = $this->db->prepare($sql);
      // $stmt->bindparam('title:', $key);
       $stmt->execute();
       $result = $this->db->query($sql);
     
-     $datas = $result->fetchAll(PDO::FETCH_ASSOC); ?>
+     $datas = $result->fetchAll(PDO::FETCH_ASSOC); 
+       if($stmt->rowCount() == 0){ ?>
+       <div class="error">
+         <h3> There are no results for this Item, type somthing else and try again </h3>
+       </div>
+     <?php  } else {
+     ?>
      <div class="new-job-con">
-     <div class="new-job">
-       <h1>New Job Listings</h1>
-    </div>
+      <div class="new-job">
+       <h1>looking for jobs in... </h1>
+     </div>
     </div>
          <?php foreach ($datas as $data) : ?>
 <div class="con">
@@ -120,19 +128,38 @@ public function edit() {
   </div>
  </div>
  </div>
-<?php endforeach; ?>
+<?php endforeach; 
+
+         }
+         
+        
 
       
   
-      <?php  }
+        }
    
      
-  // $row = $stmt->fetch(PDO::FETCH_ASSOC); 
-    
 
-       // }
     }
 }
 
 
 ?>
+
+<style>
+  .error{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+     background-color: #ABC;
+     padding: 1rem;
+}
+.error h1 {
+   
+  
+    font-size: 1.4rem;
+}
+
+</style>

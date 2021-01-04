@@ -17,6 +17,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require_once 'insert.php';
 require_once 'update.php';
+require_once 'signup.inc.php';
 $crud = new In($pdo);
 $crud1 = new Up($pdo);
+$crud2 = new Sign($pdo);
 

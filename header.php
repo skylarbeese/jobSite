@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,11 +24,22 @@
         <a href="insertLi.php"><li> create a listing </li></a>
     </ul>
     <div class="btn-con">
- 
-    <button class="btn btn-outline-success my-2 my-sm-0"> signin </button>
+    <?php
+    if(isset($_SESSION['user'])) { ?>
+        
+        <form action="signout.php" method="POST">
+      <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" value="signout">
+    </form>
+     <?php  } else { ?>
+      <a href="signup.php"><button class="btn btn-outline-success my-2 my-sm-0" > signin </button></a>
+      <button class="btn btn-outline-success my-2 my-sm-0"> signup </button>
+   <?php    } ?>
+    
    
    
-    <a href="signup.php"><button class="btn btn-outline-success my-2 my-sm-0" > signup </button></a>
+    
+
+    
   
     </div>
 </nav>

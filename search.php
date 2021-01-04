@@ -5,7 +5,7 @@
   <h1> Search here </h1>
   <h2> search for a job title or compony here </h2>
   <form action="ser.php" method="POST">
-    <input class="form-control search-bar" type="text" name='keyword'>
+    <input class="form-control search-bar" type="text" name='keyword' placeholder="search for a job...">
     <button class="btn btn-danger submit" type="submit" name="submit" value="submit"> search </button>
   </form>
 </div>
