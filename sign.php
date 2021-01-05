@@ -12,7 +12,7 @@
     </div>
     <div class="input">
     <label> email </label>
-    <input class="form-control" type="email" name="email" placeholder="email">
+    <input class="form-control" type="text" name="email" placeholder="email">
     </div>
     <div class="input">
     <label> password </label>
@@ -24,6 +24,7 @@
     </div>
     <input class="btn btn-danger submit" type="submit" name="submit" value="signin">
 </form>
+   <p>already have an account? sign in <a href="signup.php"> here </a></p>
 </div>
 <style>
     .signup-form-con h1{

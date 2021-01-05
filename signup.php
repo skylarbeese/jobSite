@@ -17,6 +17,7 @@
     <input class="btn btn-danger submit" type="submit" name="submit" value="signin">
     </div>
 </form>
+<p>dont have an account yet? sign up <a href="sign.php"> here </a></p>
 </div>
 <style>
     .signup-form-con h1{

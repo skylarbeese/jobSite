@@ -3,6 +3,9 @@
 
 
 ?>
+ <?php
+    if(isset($_SESSION['user'])) { ?>
+     >
 <div class="form">
     <h1> Enter A New Job Here </h1>
 <div class="form-input">
@@ -40,3 +43,42 @@
 </form>
 </div>
 </div>
+<?php } else { ?>
+    <div class="con-d">
+    <div class="con">
+      <h1> sign in or make an account to create your own job listing for other people to view! </h1>
+      <p>click <a href="signup.php">here</a>, to create an acount, or click <a href="sign.php">here</a> to signin to an existing account</p>
+    </div>
+    </div>
+<?php } ?>
+<style>
+   .con-d{
+    justify-content: center;
+       align-items: center;
+       display: flex;
+       margin-top: 2rem;
+       width: 100%;
+       height: 100%;
+   }
+   .con{
+       justify-content: center;
+       align-items: center;
+       display: flex;
+       background-color:  #f2f2f2;
+       border: 1px solid rgb(104, 106, 109);
+       width: 80%;
+       height: 30%;
+       border-radius: 2rem;
+       padding: 4rem;
+   }
+   .con h1{
+      
+       color: rgb(104, 106, 109);
+       font-size: 1.5rem;
+       padding: 1rem;
+   } 
+   .con p {
+    color: rgb(104, 106, 109);
+    font-size: 1rem;
+   }
+</style>

@@ -3,10 +3,10 @@
  if(isset($_POST['submit'])) {
     
  
-   $user =  $_POST['user'];
-   $email =  $_POST['email'];
-   $pass =  $_POST['pass'];
-   $passch =  $_POST['passch'];
+   $user =  trim($_POST['user']);
+   $email =  trim($_POST['email']);
+   $pass =  trim($_POST['pass']);
+   $passch =  trim($_POST['passch']);
  
    
       $data = $crud2->reg($user, $email, $pass, $passch);  

@@ -25,20 +25,20 @@ function __construct($conn)
      if($stmt->rowCount() == 1) {
          $datas = $result->fetch(PDO::FETCH_ASSOC); 
       if($datas['a_username'] === $name && $datas['a_pass'] === $pass) {
-     //   session_start();
+ 
         $_SESSION['id'] = $datas['id'];
 
           $_SESSION['user'] = $datas['a_username'];
         
           $_SESSION['pass'] = $datas['a_pass'];
           header('location: index.php?signedin');
-         //  echo 'success';
+     
         exit();
         
       }
     } else {
         
-         header('location: signup.php?pass_or_userTaken');
+         header('location: signup.php?pass_or_userIncorrect');
      }
   } else {
       
@@ -51,27 +51,33 @@ function __construct($conn)
     if(!empty($name) || !empty($email) || !empty($pass) || !empty($passch)) {
 
       if($pass !== $passch) {
-        header('location: sign.php?pass_no_match?username=' . $name . 'user=' . $email);
+        header('location: sign.php?pass_no_match?username=' . $name . 'email=' . $email);
       } else {
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+          header('location: sign.php?email_address_error?username=' . $name);
+        } else {
       $sql = "SELECT * FROM a_login WHERE a_username='$name' OR a_email='$email' OR a_pass='$pass'";
       $stmt = $this->db->prepare($sql);
    /*   $stmt->bindParam('name:', $name);
       $stmt->bindParam('email:', $email);
-      $stmt->bindParam('pass:', $pass);  */
+      $stmt->bindParam('pass:', $pass);   */
+        }
       }
      $rownum = $this->db->query($sql);
       if($rownum->rowCount() > 0) {
            
             header('location: sign.php?this_user_already_exists');
       } else {
+       $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
-        ('$name', '$email', '$pass')";
+        ('$name', '$email', '$pass_hash')";
         $stmt = $this->db->prepare($query);
-      /*  $stmt->bindParam('sname:', $name);
+     /*   $stmt->bindParam('sname:', $name);
         $stmt->bindParam('email:', $email);
-        $stmt->bindParam('pass:', $pass);  
-    */
+        $stmt->bindParam('pass:', $pass_hash);  */
+    
         $stmt->execute();
+        
         header('location: sign.php?success');
       }
     
