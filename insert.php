@@ -82,12 +82,15 @@ class In {
      <p class="date lead"><?php echo $row['post_date']; ?></p>
      </div>
      </div>
+      <?php
+    if(isset($_SESSION['user'])) { ?>
      <div class="buttons">
      <from action="del.php" method="POST">
      <a href="del.php?del=<?php echo $row['cat_id']; ?>"><button class='btn btn-danger dele' name="submit" type="submit"> Delete </button></a>
      <a href="edit.php?Ed=<?php echo $row['cat_id']; ?>"><button class='btn btn-success dele' name="submit" type="submit"> Edit </button></a>
      </from>
      </div>
+     <?php } ?>
      </div>
      </div>
 

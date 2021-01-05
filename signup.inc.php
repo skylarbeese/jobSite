@@ -37,15 +37,49 @@ function __construct($conn)
         
       }
     } else {
-         echo "taken";
+        
+         header('location: signup.php?pass_or_userTaken');
      }
   } else {
-      echo 'enter in every feild';
+      
+      header('location: signup.php?feilds_empty');
   }
  
    
 }
+  public function reg($name, $email, $pass, $passch) {
+    if(!empty($name) && !empty($email) && !empty($pass) && !empty($passch)) {
 
+      if($pass !== $passch) {
+        header('location: sign.php?pass_no_match');
+      } else {
+      $sql = "SELECT * FROM a_login WHERE a_username='$name' OR a_email='$email' OR a_pass='$pass'";
+      $stmt = $this->db->prepare($sql);
+   /*   $stmt->bindParam('name:', $name);
+      $stmt->bindParam('email:', $email);
+      $stmt->bindParam('pass:', $pass);  */
+      }
+     $rownum = $this->db->query($sql);
+      if($rownum->rowCount() > 0) {
+           
+            header('location: sign.php?this_user_already_exists');
+      } else {
+        $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
+        ('$name', '$email', '$pass')";
+        $stmt = $this->db->prepare($query);
+      /*  $stmt->bindParam('sname:', $name);
+        $stmt->bindParam('email:', $email);
+        $stmt->bindParam('pass:', $pass);  
+    */
+        $stmt->execute();
+        header('location: sign.php?success');
+      }
+    
+  } else {
+    header('location: sign.php?emptyfeilds');
+    
+  }
+}
   } 
     
 

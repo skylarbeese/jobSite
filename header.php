@@ -32,7 +32,7 @@
     </form>
      <?php  } else { ?>
       <a href="signup.php"><button class="btn btn-outline-success my-2 my-sm-0" > signin </button></a>
-      <button class="btn btn-outline-success my-2 my-sm-0"> signup </button>
+      <a href="sign.php"><button class="btn btn-outline-success my-2 my-sm-0"> signup </button></a>
    <?php    } ?>
     
    

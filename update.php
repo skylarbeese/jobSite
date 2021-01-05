@@ -19,7 +19,7 @@ public function edit() {
       $sql = "SELECT * FROM job_listed WHERE cat_id = ? ";
       $stmt = $this->db->prepare($sql);
     
-    $stmt->bindparam(1, $id);
+    $stmt->bindParam(1, $id);
    
      $stmt->execute();
    $row = $stmt->fetch(PDO::FETCH_ASSOC); ?>
@@ -72,14 +72,14 @@ public function edit() {
       con_user='$conu', con_em='$conem' WHERE cat_id = ?";
        
         $stmt = $this->db->prepare($sql);
-   /*     $stmt->bindparam(':cname', $cname);
-        $stmt->bindparam(':jtitle',  $jtitle);
-        $stmt->bindparam(':djob', $djob);
-        $stmt->bindparam(':smon', $smon);
-        $stmt->bindparam(':loca', $loca);
-        $stmt->bindparam(':conu', $conu);
-        $stmt->bindparam(':conem', $conem); */
-        $stmt->bindparam(1, $id);
+     /*   $stmt->bindParam(':cname', $cname);
+        $stmt->bindParam(':jtitle',  $jtitle);
+        $stmt->bindParam(':djob', $djob);
+        $stmt->bindParam(':smon', $smon);
+        $stmt->bindParam(':loca', $loca);
+        $stmt->bindParam(':conu', $conu);
+        $stmt->bindParam(':conem', $conem);  */
+        $stmt->bindParam(1, $id);
         $stmt->execute();
        
     } catch(PDOException $e) {
@@ -92,9 +92,9 @@ public function edit() {
     public function search($key) {
        if(isset($_POST['submit'])) {
            // $keyword = $_POST['keyword'];
-      $sql = "SELECT * FROM job_listed WHERE j_title LIKE '$key' OR company_nm LIKE '$key'";
+      $sql = "SELECT * FROM job_listed WHERE j_title LIKE 'title:' OR company_nm LIKE 'title:'";
       $stmt = $this->db->prepare($sql);
-     // $stmt->bindparam('title:', $key);
+      $stmt->bindParam('title:', $key);
       $stmt->execute();
       $result = $this->db->query($sql);
     
