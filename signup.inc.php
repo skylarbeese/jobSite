@@ -38,23 +38,23 @@ function __construct($conn)
       }
     } else {
         
-         header('location: signup.php?pass_or_userIncorrect');
+         header('location: signup.php?signup=pass_or_userIncorrect');
      }
   } else {
       
-      header('location: signup.php?feilds_empty');
+      header('location: signup.php?signup=feilds_empty');
   }
  
    
 }
   public function reg($name, $email, $pass, $passch) {
     if(!empty($name) || !empty($email) || !empty($pass) || !empty($passch)) {
-
+         
       if($pass !== $passch) {
-        header('location: sign.php?pass_no_match?username=' . $name . 'email=' . $email);
+        header('location: sign.php?pass_no_match?signup=username=' . $name . 'email=' . $email);
       } else {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-          header('location: sign.php?email_address_error?username=' . $name);
+          header('location: sign.php?email_address_error?signup=username=' . $name);
         } else {
       $sql = "SELECT * FROM a_login WHERE a_username='$name' OR a_email='$email' OR a_pass='$pass'";
       $stmt = $this->db->prepare($sql);
@@ -66,7 +66,7 @@ function __construct($conn)
      $rownum = $this->db->query($sql);
       if($rownum->rowCount() > 0) {
            
-            header('location: sign.php?this_user_already_exists');
+            header('location: sign.php?signup=this_user_already_exists');
       } else {
        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
@@ -78,11 +78,11 @@ function __construct($conn)
     
         $stmt->execute();
         
-        header('location: sign.php?success');
+        header('location: sign.php?signup-success');
       }
     
   } else {
-    header('location: sign.php?emptyfeilds');
+    header('location: sign.php?signup=emptyfeilds');
     
   }
 }

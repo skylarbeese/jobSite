@@ -5,7 +5,7 @@
 ?>
  <?php
     if(isset($_SESSION['user'])) { ?>
-     >
+     
 <div class="form">
     <h1> Enter A New Job Here </h1>
 <div class="form-input">
@@ -47,7 +47,7 @@
     <div class="con-d">
     <div class="con">
       <h1> sign in or make an account to create your own job listing for other people to view! </h1>
-      <p>click <a href="signup.php">here</a>, to create an acount, or click <a href="sign.php">here</a> to signin to an existing account</p>
+      <p>click <a href="sign.php">here</a>, to create an acount, or click <a href="signup.php">here</a> to signin to an existing account</p>
     </div>
     </div>
 <?php } ?>
