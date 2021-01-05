@@ -12,7 +12,7 @@
     </div>
     <div class="input">
     <label> email </label>
-    <input class="form-control" type="email" name="email" placeholder="username">
+    <input class="form-control" type="email" name="email" placeholder="email">
     </div>
     <div class="input">
     <label> password </label>

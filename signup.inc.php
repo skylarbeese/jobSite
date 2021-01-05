@@ -48,10 +48,10 @@ function __construct($conn)
    
 }
   public function reg($name, $email, $pass, $passch) {
-    if(!empty($name) && !empty($email) && !empty($pass) && !empty($passch)) {
+    if(!empty($name) || !empty($email) || !empty($pass) || !empty($passch)) {
 
       if($pass !== $passch) {
-        header('location: sign.php?pass_no_match');
+        header('location: sign.php?pass_no_match?username=' . $name . 'user=' . $email);
       } else {
       $sql = "SELECT * FROM a_login WHERE a_username='$name' OR a_email='$email' OR a_pass='$pass'";
       $stmt = $this->db->prepare($sql);

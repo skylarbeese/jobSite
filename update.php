@@ -92,9 +92,9 @@ public function edit() {
     public function search($key) {
        if(isset($_POST['submit'])) {
            // $keyword = $_POST['keyword'];
-      $sql = "SELECT * FROM job_listed WHERE j_title LIKE 'title:' OR company_nm LIKE 'title:'";
+      $sql = "SELECT * FROM job_listed WHERE j_title LIKE '%$key%' OR company_nm LIKE '%$key%'";
       $stmt = $this->db->prepare($sql);
-      $stmt->bindParam('title:', $key);
+    //  $stmt->bindParam('title:', $key);
       $stmt->execute();
       $result = $this->db->query($sql);
     
