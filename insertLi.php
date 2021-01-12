@@ -15,7 +15,7 @@
         <label> company name </label>
     <input class="form-control" type="text" name="name_c" placeholder="name of company">
     </div>
-    <div class=" input">
+    <div class="input">
         <label>job title</label>
     <input class="form-control" type="text" name="title" placeholder="job title">
     </div>
@@ -45,7 +45,7 @@
 </div>
 <?php } else { ?>
     <div class="con-d">
-    <div class="con">
+    <div class="con1">
       <h1> sign in or make an account to create your own job listing for other people to view! </h1>
       <p>click <a href="sign.php">here</a>, to create an acount, or click <a href="signup.php">here</a> to signin to an existing account</p>
     </div>
@@ -56,14 +56,16 @@
     justify-content: center;
        align-items: center;
        display: flex;
+     
        margin-top: 2rem;
        width: 100%;
        height: 100%;
    }
-   .con{
+   .con1{
        justify-content: center;
        align-items: center;
        display: flex;
+       flex-direction: column;
        background-color:  #f2f2f2;
        border: 1px solid rgb(104, 106, 109);
        width: 80%;
@@ -71,13 +73,13 @@
        border-radius: 2rem;
        padding: 4rem;
    }
-   .con h1{
+   .con1 h1{
       
        color: rgb(104, 106, 109);
        font-size: 1.5rem;
        padding: 1rem;
    } 
-   .con p {
+   .con1 p {
     color: rgb(104, 106, 109);
     font-size: 1rem;
    }

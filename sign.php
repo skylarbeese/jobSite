@@ -13,18 +13,18 @@
 
 $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-if(strpos($fullUrl, "signup-success") == true) {
-    echo "<p class='success text-success font-italic'> you are now have an account </p>";
+if(strpos($fullUrl, "signup-success") == true) { ?>
+    <p class='success text-success font-italic'> you are now have an account </p>
    
-} else if(strpos($fullUrl, "signup=emptyfeilds") == true) {
-   echo "<p class='error text-danger font-italic'> feilds are empty </p>";
+<?php } else if(strpos($fullUrl, "signup=emptyfeilds") == true) { ?>
+   <p class='error text-danger font-italic'> feilds are empty </p>
  
-}  else if(strpos($fullUrl, "signup=this_user_already_exists") == true) {
-  echo "<p class='error text-danger font-italic'> account already exists </p>";
+<?php }  else if(strpos($fullUrl, "signup=this_user_already_exists") == true) { ?>
+  <p class='error text-danger font-italic'> account already exists </p>
 
-}  else if(strpos($fullUrl, "signup=username=") == true) {
-  echo "<p class='error text-danger font-italic'> username is incorrect </p>";
-}
+<?php }  else if(strpos($fullUrl, "signup=username=") == true) { ?>
+ <p class='error text-danger font-italic'> username is incorrect </p>
+<?php }
 
 ?>
     <div class="input">

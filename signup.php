@@ -9,13 +9,13 @@
 
 $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-if(strpos($fullUrl, "signup=pass_or_userIncorrect") == true) {
-    echo "<p class='error text-danger font-italic'> password or username is incorrect </p>";
-   
-} else if(strpos($fullUrl, "signup=feilds_empty") == true) {
-   echo "<p class='error text-danger font-italic'> feilds are empty </p>";
+if(strpos($fullUrl, "signup=pass_or_userIncorrect") == true) { ?>
+    <p class='error text-danger font-italic'> password or username is incorrect </p>
+ <?php  
+} else if(strpos($fullUrl, "signup=feilds_empty") == true) { ?>
+   <p class='error text-danger font-italic'> feilds are empty </p>
  
-}
+<?php }
 
 ?>
     <div class="input">

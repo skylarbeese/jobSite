@@ -58,9 +58,7 @@ function __construct($conn)
         } else {
       $sql = "SELECT * FROM a_login WHERE a_username='$name' OR a_email='$email' OR a_pass='$pass'";
       $stmt = $this->db->prepare($sql);
-   /*   $stmt->bindParam('name:', $name);
-      $stmt->bindParam('email:', $email);
-      $stmt->bindParam('pass:', $pass);   */
+
         }
       }
      $rownum = $this->db->query($sql);
@@ -68,16 +66,8 @@ function __construct($conn)
            
             header('location: sign.php?signup=this_user_already_exists');
       } else {
-       $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-        $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
-        ('$name', '$email', '$pass_hash')";
-        $stmt = $this->db->prepare($query);
-     /*   $stmt->bindParam('sname:', $name);
-        $stmt->bindParam('email:', $email);
-        $stmt->bindParam('pass:', $pass_hash);  */
     
-        $stmt->execute();
-        
+        $this->in($name, $email, $pass);
         header('location: sign.php?signup-success');
       }
     
@@ -86,6 +76,17 @@ function __construct($conn)
     
   }
 }
+
+  public function in($name, $email, $pass) {
+    $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+    $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
+    ('$name', '$email', '$pass_hash')";
+      /*   $stmt->bindParam('sname:', $name);
+        $stmt->bindParam('email:', $email);
+        $stmt->bindParam('pass:', $pass_hash);  */
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+  }
   } 
     
 

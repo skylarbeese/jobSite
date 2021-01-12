@@ -30,6 +30,9 @@ $datas = $crud->get(); ?>
  </div>
  </div>
 <?php endforeach; ?>
+<style>
+ 
 
+</style>
 
  
