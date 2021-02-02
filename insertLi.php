@@ -39,6 +39,10 @@
         <label>company email</label>
     <input class="form-control" type="email" name="email" placeholder="email of maneger">
     </div>
+    <div class="input">
+        <label>date post is make</label>
+    <input class="form-control" type="date" name="date" placeholder="todays date">
+    </div>
    <input class="form-control btn-danger submit" type="submit" value="submit" name="submit">
 </form>
 </div>

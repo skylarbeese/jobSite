@@ -16,7 +16,7 @@ $datas = $crud->get(); ?>
 
   <div class="cont">
   <div class="card-header">
-<a href="listing.php?id=<?php echo $data['cat_id']?>"><h3><?php echo $data['j_title']; ?></h3></a>
+<a href="listing.php?id=<?php echo $data['cat_id']; ?>"><h3><?php echo $data['j_title']; ?></h3></a>
   </div>
   <div class="card-body">
 <div class="dis">

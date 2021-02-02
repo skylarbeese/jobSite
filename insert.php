@@ -13,11 +13,11 @@ class In {
        $this->db = $conn;
    
      } 
-    public function insert($cname, $jtitle, $djob, $smon, $loca, $conu, $conem) {
+    public function insert($cname, $jtitle, $djob, $smon, $loca, $conu, $conem, $dat) {
    try{
        $sql = "INSERT INTO job_listed (`company_nm`, `j_title`, `descript_job`, `salery_mon`, `loca_where`,
-        `con_user`, `con_em`) VALUES 
-       (:cname, :jtitle, :djob, :smon, :loca, :conu, :conem)";
+        `con_user`, `con_em`, `post_date`) VALUES 
+       (:cname, :jtitle, :djob, :smon, :loca, :conu, :conem, :dat)";
        $stmt = $this->db->prepare($sql);
        $stmt->bindparam(':cname', $cname);
        $stmt->bindparam(':jtitle',  $jtitle);
@@ -26,7 +26,7 @@ class In {
        $stmt->bindparam(':loca', $loca);
        $stmt->bindparam(':conu', $conu);
        $stmt->bindparam(':conem', $conem);
-       
+       $stmt->bindparam(':dat', $dat);
        $stmt->execute();
       
    } catch(PDOException $e) {
@@ -43,10 +43,10 @@ class In {
   
           while($row = $result->fetchAll(PDO::FETCH_ASSOC)) {
           //  print_r($row);
-              $data = $row;
+              return $row;
           }
   
-          return $data;
+      //    return $row;
       }
       
       public function list() {
@@ -78,7 +78,7 @@ class In {
      <h5 class="mon"><?php echo $row['salery_mon']; ?></h5>
        </div>
        <div class="date">
-         <p>date posted</p>
+         <p>date posted/last updated</p>
      <p class="date lead"><?php echo $row['post_date']; ?></p>
      </div>
      </div>

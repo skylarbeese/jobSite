@@ -10,8 +10,8 @@ if(isset($_POST['submit'])) {
   $loca = $_POST['loca'];
   $conu = $_POST['ab_name'];
   $conem = $_POST['email'];
-
-     $succes = $crud->insert($cname, $jtitle, $djob, $smon, $loca, $conu, $conem);
+  $dat = $_POST['date'];
+     $succes = $crud->insert($cname, $jtitle, $djob, $smon, $loca, $conu, $conem, $dat);
 
      if($succes) {
       echo "succes";
