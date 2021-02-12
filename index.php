@@ -1,18 +1,6 @@
 
     
-<?php 
 
- include_once 'db.php'; 
- include_once 'header.php';
-
- include_once 'search.php';
-
-include_once 'get.php';
-
-
-
-
-?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
 <html lang="en">
@@ -25,6 +13,18 @@ include_once 'get.php';
     <title>React App</title>
   </head>
   <body>
- 
+  <?php 
+
+include_once 'db.php'; 
+include_once 'header.php';
+
+include_once 'search.php';
+
+include_once 'get.php';
+
+
+
+
+?>
   </body>
 </html>
