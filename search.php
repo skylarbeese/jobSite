@@ -65,5 +65,8 @@ input.search-bar{
     padding: 1.2rem;
     border-bottom: 2px solid black;
 }
-
+.card-body{
+   width: 100%;
+   height: 100%;
+ }
 </style>

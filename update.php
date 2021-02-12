@@ -161,5 +161,8 @@ public function edit() {
   
     font-size: 1.4rem;
 }
-
+.card-body{
+   width: 100%;
+   height: 100%;
+ }
 </style>

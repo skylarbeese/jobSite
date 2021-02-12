@@ -77,8 +77,8 @@ function __construct($conn)
   }
 }
 
-  public function in($name, $email, $pass) {
-    $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+  public function in($name, $email, $pass_hash) {
+   // $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
     $query = "INSERT INTO a_login (`a_username`, `a_email`, `a_pass`) VALUES
     ('$name', '$email', '$pass_hash')";
       /*   $stmt->bindParam('sname:', $name);

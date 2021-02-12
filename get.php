@@ -31,7 +31,10 @@ $datas = $crud->get(); ?>
  </div>
 <?php endforeach; ?>
 <style>
- 
+ .card-body{
+   width: 100%;
+   height: 100%;
+ }
 
 </style>
 
